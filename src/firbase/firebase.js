@@ -26,26 +26,20 @@ export const provider = new GoogleAuthProvider();
 
 
   
-export function signInWithGoogle ()  {
 
+
+export const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const name = result.user.displayName;
       const email = result.user.email;
       const profilePic = result.user.photoURL;
-      
+
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
       localStorage.setItem("profilePic", profilePic);
-
-      if (name) {
-        console.log("hello")
-      }
-      
     })
     .catch((error) => {
       console.log(error);
     });
 };
-
-export const db = getFirestore(app);

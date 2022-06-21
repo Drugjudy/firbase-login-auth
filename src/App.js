@@ -1,9 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import './App.css';
+import Login from "./firbase/googleAuth";
+import Google from "./firbase/goauth";
+
 
 function App() {
+  
+
   return (
-    "hello"
+    <Router>
+      
+      <Routes>
+        <Route path="/" element={<Login  />} />
+         <Route path="/go" element={<Google  />} />
+      </Routes>
+    </Router>
   );
 }
 
